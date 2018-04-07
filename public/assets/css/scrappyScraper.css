@@ -1,0 +1,28 @@
+/***********************************************************************
+ * Copyright (c) 2018 Charles W. Roberts
+ * All Rights Reserved
+ *
+ * No portion of this code may be copied or modified without the
+ * prior written permission of Charles Roberts.
+ *
+ ***********************************************************************/
+
+
+html{
+    height: 100%;
+}
+
+.top_header{
+    margin-top: 2em;
+}
+
+body{
+    background: linear-gradient(#EEB211, #F66733);
+    background-attachment: fixed;
+    color: #202020;
+}
+
+.splash{
+	width:50%;
+	margin:5em auto;
+}
