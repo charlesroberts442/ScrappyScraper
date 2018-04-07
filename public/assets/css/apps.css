@@ -1,0 +1,84 @@
+/***********************************************************************
+ * Copyright (c) 2018 Charles W. Roberts
+ * All Rights Reserved
+ *
+ * No portion of this code may be copied or modified without the
+ * prior written permission of Charles Roberts.
+ *
+ ***********************************************************************/
+ html {
+    height: 100%;
+}
+
+
+ body{
+ 	background-image: url("../images/Smokies_1.JPG");
+ 	width: 100%;
+ 	height: 100%;
+ 	background-size: cover;
+ 	background-attachment: fixed;
+ 	color: black;
+}
+
+.top_div{
+	margin-top: 2em;
+	background-color: #c0c0c0;
+	opacity:0.8;
+	
+}
+
+.about_me{
+	background-color: #d0d0d0;
+	
+}
+
+.app_logo{
+	margin: 0.5em 0.5em;
+}
+
+.my_text{
+	position: relative;
+	left:0.5em;
+}
+
+a{
+	color: black;
+	text-decoration:none;
+}
+a:hover{
+	color:black;
+	text-decoration:underline;
+}
+
+.logo_row{
+	width:90%;
+	margin:auto;
+}
+
+.contact_logo{
+	margin: 0.25em 0.3em;
+}
+
+
+
+.text_window{
+	margin:auto;
+	background-color: #d0d0d0;
+  height: 12em;
+  max-height: 12em;
+  width:95%;
+  min-height: 10em;
+ 
+  padding:0.5em;
+  border:none;
+}
+
+
+.logo_row{
+	width:90%;
+	margin:auto;
+}
+
+.contact_logo{
+	margin: 0.25em 1.0em;
+}

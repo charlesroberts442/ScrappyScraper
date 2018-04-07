@@ -26,7 +26,7 @@ const express    = require("express");
 const bodyParser = require("body-parser");
 const logger     = require("morgan"); // Hmmm, will I use this?
 const mongoose   = require("mongoose");
-//* const routes     = require('./routes/apiRoutes'); // Pull in our router file
+const routes     = require('./routes/apiRoutes'); // Pull in our router file
 const exphbs     = require('express-handlebars'); // Use handlebars 
 
 // The scraping tools from activity 20
@@ -34,7 +34,7 @@ const axios   = require("axios");
 const cheerio = require("cheerio");
 
 // Require all models
-//* const db = require("./models");
+const db = require("./models");
 
 // I like port 17001
 const PORT = 17001;
@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //Tell the express app to use the routes in ./routes/apiRoutes
-//* app.use('/', routes);
+app.use('/', routes);
 
 // Set up Handlebars as our view engine
 app.engine('handlebars', exphbs(

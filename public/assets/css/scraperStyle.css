@@ -1,0 +1,136 @@
+/***********************************************************************
+ * Copyright (c) 2018 Charles W. Roberts
+ * All Rights Reserved
+ *
+ * No portion of this code may be copied or modified without the
+ * prior written permission of Charles Roberts.
+ *
+ ***********************************************************************/
+ html {
+    height: 100%;
+}
+body{
+    background: linear-gradient(#EEB211, #F66733);
+    background-attachment: fixed;
+    color: #202020;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 2em;
+    padding: 0;
+}
+
+.article_display{
+	display: inline-block;
+	width:45%;
+    overflow: auto;
+    height: 480px;
+    padding: 1px;
+    border-color: black;
+    border-width: 1px;
+    border: solid;
+      }
+.article_display1{
+    display: inline-block;
+    width:80%;
+    margin: auto;
+    overflow: auto;
+    height: 350px;
+    padding: 1px;
+    border-color: black;
+    border-width: 1px;
+    border: solid;
+}
+
+ .article_display_top1{
+	display: inline-block;
+	width:40%;
+    margin-left:5px;
+    overflow: auto;
+    height: 480px;
+    padding: 1px;
+    
+    border: none;
+      }
+ 
+ .btn_div {
+    display: block;
+ } 
+
+.screen1{
+	display: block;
+}
+
+.screen2{
+	display: none;
+}
+
+.scraper_btn{
+    display: inline-block;
+    opacity: 0.8;
+    background-color: #e0e0e0;
+}
+
+#screen1_not_saved{
+    margin-right:4em;
+    margin-top:2em;
+}
+
+.title_p{
+	margin-bottom: 1px;
+}
+	
+a:link, a:visited {
+    color: black;
+    text-decoration: underline;
+    cursor: grabbing;
+}
+
+a:link:active, a:visited:active {
+    color: black;
+    cursor: grabbing;
+}
+
+	
+
+.article_link{
+	margin-top: 1px;
+}
+
+.Note_div{
+	position: fixed;
+	right: 1em;
+	top: 2em;
+	/*display: none;*/
+}
+
+.test_div{
+	background-color: powderblue;
+	width:50%;
+	margin:5em auto;
+	height:20em;
+}
+
+#notes {
+        float: right;
+        width: 30%;
+        margin-right: 15px;
+      }
+
+      textarea, input {
+        display: block;
+        width: 100%;
+        background-color: #FCF5C7;
+        margin-right: 30px;
+      }
+      input {
+        height: 36px;
+        font-size: 20px;
+        margin-right: 30px;
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+        margin-right: 30px;
+      }

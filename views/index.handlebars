@@ -1,0 +1,15 @@
+<ul>
+   {{#each dbArticle }}
+
+   	{{#if this.saved }}
+
+	<li>
+	
+	   <p class = "title_p saved" data-id= {{this._id}} >{{this.title}}</p>
+	   <a class = "article_link" target = "_blank" href = {{this.link}}>{{this.link}}</a>
+	   
+	</li>
+	{{/if}}
+	<br>
+   {{/each}}
+</ul>

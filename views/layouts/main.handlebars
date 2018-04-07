@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!-- 
+ * Copyright (c) 2018 Charles W. Roberts
+ * All Rights Reserved
+ *
+ * No portion of this code may be copied or modified without the
+ * prior written permission of Charles Roberts.
+ *
+ -->
+
+<head>
+    
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <!-- Local style sheet -->
+    <link rel="stylesheet" href="./assets/css/scraperStyle.css">
+
+    <title>{{title}}</title>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark top-nav">
+
+
+ 
+    
+    <ul class="navbar-nav">
+        
+        <li class="nav-item">
+            <a class="nav-link" data-name="screen1" id="nav1" href="#">Administration</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-name="screen2" id="nav2" href="#">Notes</a>
+        </li>
+        
+    </ul>
+
+</nav>
+
+<div>
+<h1 class="text-center">Scraper!  (⌐■_■) </h1>
+<br>
+</div>
+
+<div class = "screen1" id="screen1">
+
+    <p class = "text-center">The two tables on this screen contain the latest scraped articles and the saved articles.</p>
+
+    <p class = "text-center">Clicking on the title of an article will cause the article to move from scraped to saved or saved to scraped.
+    
+    <div class="article_display_top1" id="screen1_not_saved">
+        <h2 class = "text-center">Scraped Articles</h2>
+        <button class = "scraper_btn">Scrape Again</button>
+        <div class="article_display1" id="screen1_not_saved">
+        {{> fuckit}}   
+    </div>
+    </div>
+
+    <div class="article_display_top1" id="screen1_saved">
+        <h2 class = "text-center">Saved Articles</h2>
+        <button class = "scraper_btn">Delete Saved Articles</button>
+        <div class="article_display1" id="screen1_not_saved">
+        {{{ body }}}  
+    </div>
+    </div>
+
+    
+</div>
+
+
+
+
+
+
+<!-- --------------- End of Screen 1, Beginning of Screen 2 ------------- -->
+
+
+
+
+
+<div class = "screen2" id="screen2">
+
+<br>
+<div id="buttons">
+      <button class="scraper_btn" id="btn5">Button Five</button>
+      <button class="scraper_btn" id="btn6">Button Six</button>
+    </div>
+
+    <div id="notes"></div>
+
+    <div class="article_display">
+        {{{body}}}
+        
+        
+    </div>
+
+    <div id="articles"></div>
+      
+</div>
+
+
+    
+    <!-- Linking Javascript -->
+
+    <!-- jQuery library -->
+    <script type="text/javascript" src="assets/javascript/jQuery.3.2.1.js"></script>
+
+    <!-- Popper JS -->
+    <script type="text/javascript" src="assets/javascript/popper.js.1.12.6.js"></script>
+        
+    <!-- Latest compiled JavaScript -->
+    <script type="text/javascript" src="assets/javascript/bootstrap.4.0.0-beta.2.js"></script>
+
+    
+
+    <!-- Local JavaScript file -->
+    <script type="text/javascript" src="./assets/javascript/scraperScript.js"></script>
+    
+</body>
+
+</html>
