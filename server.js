@@ -59,11 +59,17 @@ app.engine('handlebars', exphbs(
 	}));
 app.set('view engine', 'handlebars');
 
-// By default mongoose uses callbacks for async queries, 
-// we're setting it to use promises (.then syntax) instead
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/week18Populater");
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
+
+
 
 // Tell the express object where front end files are
 app.use(express.static(process.cwd() + '/public'));
