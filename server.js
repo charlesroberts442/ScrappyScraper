@@ -24,7 +24,6 @@
  ***********************************************************************/
 const express    = require("express");
 const bodyParser = require("body-parser");
-const logger     = require("morgan"); // Hmmm, will I use this?
 const mongoose   = require("mongoose");
 const routes     = require('./routes/apiRoutes'); // Pull in our router file
 const exphbs     = require('express-handlebars'); // Use handlebars 
