@@ -81,6 +81,7 @@ scrapeRouter.get('/scrape', function(req,res)
 // Route for getting all Articles from the db
 scrapeRouter.get("/articles", function(req, res) {
   // Grab every document in the Articles collection
+  console.log("I'm in the get(articles route");
   db.Article.find({})
     .then(function(dbArticle) {
        //console.log(dbArticle);
@@ -98,12 +99,15 @@ scrapeRouter.get("/articles", function(req, res) {
 // Route for grabbing a specific Article by id, and toggle its 
 // saved value
 scrapeRouter.get("/toggle_saved", function(req, res) {
-  console.log("In the /toggle_saved routereq.query, req.query.newValue is " + req.query.newValue);
+  console.log("The query is ");
+  console.log(req.query.newValue);
 
   if(req.query.newValue === "true")
   {
+
     
     console.log("In the /toggle_saved if route, calling findOneAndUpdate");
+
     console.log("req.query.newValue is " + req.query.newValue);
     db.Article.findOneAndUpdate(
         { _id: req.query.article_id },
@@ -112,6 +116,9 @@ scrapeRouter.get("/toggle_saved", function(req, res) {
 
     then(function(dbArticle) {
       console.log("The find one and update seems to have worked")
+      res.redirect("/articles");
+
+      
     
     }).
     
@@ -133,6 +140,7 @@ console.log("req.query.newValue is " + req.query.newValue);
     ).
 
     then(function(dbArticle) {
+      res.redirect("/articles");
       console.log("The find one and update seems to have worked")
       
     }).
@@ -143,7 +151,7 @@ console.log("req.query.newValue is " + req.query.newValue);
       res.json(err);
     });
   }
-  res.redirect("/articles");
+
 });
 
 

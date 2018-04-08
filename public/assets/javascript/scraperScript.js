@@ -1,12 +1,27 @@
 
+function getArticles()
+{
+  console.log("I'm in getArticles()");
+  setTimeout(function()
+    {
+      console.log("The timeout has fired.")
+      location.reload(true); 
+    }
+    , 10000);
+}
+
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function(event) {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
-  var thisId = $(this).attr("data-id");
-  var thisClassList = $(this).attr('class');
+  let thisId = $(this).attr("data-id");
+  let thisClassList = $(this).attr('class');
+  console.log("thisClassList is ");
   console.log(thisClassList);
+
+  console.log("Event target is ");
+  console.log(event.target);
 
   console.log("Click!");
   console.log(thisId);
@@ -14,7 +29,7 @@ $(document).on("click", "p", function(event) {
   // Trying to find the parent
   console.log(event);
   console.log(arguments);
-  var id = $(this).parent().parent().parent().attr('id');
+  let id = $(this).parent().parent().parent().attr('id');
   console.log("id is " + id);
   console.log(id);
 
@@ -26,7 +41,21 @@ $(document).on("click", "p", function(event) {
       // Request that the backend toggle the article's
       // saved status
       console.log("Put code here to toggle saved status");
-      $.get("/toggle_saved", {article_id: thisId, newValue:false });
+
+      $.ajax({url:'toggle_saved', type: 'GET', data: {article_id: thisId, newValue:false}}).
+
+      then (function(result){
+        console.log("I'm in the screen1_saved case then statement, getting /articles ");
+        console.log("Doing $.get in screen1_not_saved");
+
+        getArticles();
+      });
+
+     
+      
+
+
+      
       break;
     }
 
@@ -35,7 +64,22 @@ $(document).on("click", "p", function(event) {
       // Request that the backend toggle the article's
       // saved status
       console.log("Put code here to toggle saved status");
-      $.get("/toggle_saved", {article_id: thisId, newValue:true});
+
+      $.ajax({url: 'toggle_saved', type: 'GET', data: {article_id: thisId, newValue:true}}).
+
+      then (function(result){
+        console.log("Doing $.get in screen1_not_saved");
+        getArticles();
+      });
+
+      
+
+      
+
+
+
+
+
       break;
 
     }
