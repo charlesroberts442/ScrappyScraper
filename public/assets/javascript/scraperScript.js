@@ -1,14 +1,31 @@
 
 function getArticles()
 {
-  console.log("I'm in getArticles()");
-  setTimeout(function()
+    console.log("I'm in getArticles()");
+    setTimeout(function()
     {
-      console.log("The timeout has fired.")
-      location.reload(true); 
+        console.log("The timeout has fired.");
+        location.reload(true); 
     }
-    , 10000);
+    , 250);
 }
+
+
+
+function doScrapeAgain(event)
+{
+    $.ajax({url:"/scrapeAgain", type: 'GET'});
+    console.log("I'm in doScrapeAgain");
+    getArticles();
+} // End ofdoScrapeAgain()
+
+
+function doDeleteSaved(event)
+{
+    $.ajax({url:"/deleteSaved", type: 'GET'});
+    console.log("I'm in doDeleteSaved");
+    getArticles();
+} // End of doDeleteSaved()
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function(event) {
@@ -50,12 +67,6 @@ $(document).on("click", "p", function(event) {
 
         getArticles();
       });
-
-     
-      
-
-
-      
       break;
     }
 
@@ -71,23 +82,12 @@ $(document).on("click", "p", function(event) {
         console.log("Doing $.get in screen1_not_saved");
         getArticles();
       });
-
-      
-
-      
-
-
-
-
-
       break;
 
     }
 
     default:
     {
-  
-
       // Now make an ajax call for the Article
       $.ajax({
         method: "GET",
@@ -191,6 +191,9 @@ let readyFunction = function()
 {
 	// Add click event listener to all elements with a class of "nav-link"
 	$(document).on("click", ".nav-link", displayPage);
+
+  $("#scrapeBtn").click(doScrapeAgain);
+  $("#deleteBtn").click(doDeleteSaved);
 
 	console.log("Ready");
 };

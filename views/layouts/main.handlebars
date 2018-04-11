@@ -57,21 +57,21 @@
 
 <div class = "screen1" id="screen1">
 
-    <p class = "text-center">The two tables on this screen contain the latest scraped articles and the saved articles.</p>
+    <p class = "text-center">The two tables on this screen contain the latest scraped articles and the saved articles from ThinkProgress.</p>
 
     <p class = "text-center">Clicking on the title of an article will cause the article to move from scraped to saved or saved to scraped.
     
     <div class="article_display_top1" id="screen1_not_saved">
         <h2 class = "text-center">Scraped Articles</h2>
-        <button class = "scraper_btn">Scrape Again</button>
+        <button class = "scraper_btn" id = "scrapeBtn">Scrape Again</button>
         <div class="article_display1" id="screen1_not_saved">
-        {{> fuckit}}   
+        {{> notSaved}}   
     </div>
     </div>
 
     <div class="article_display_top1" id="screen1_saved">
         <h2 class = "text-center">Saved Articles</h2>
-        <button class = "scraper_btn">Delete Saved Articles</button>
+        <button class = "scraper_btn" id = "deleteBtn">Delete Saved Articles</button>
         <div class="article_display1" id="screen1_saved">
         {{{ body }}}  
     </div>
@@ -93,11 +93,10 @@
 
 <div class = "screen2" id="screen2">
 
-<br>
-<div id="buttons">
-      <button class="scraper_btn" id="btn5">Button Five</button>
-      <button class="scraper_btn" id="btn6">Button Six</button>
-    </div>
+    <p class = "text-center">The table on this screen contains the latest scraped articles that have been saved from ThinkProgress.</p>
+
+    <p class = "text-center">Clicking on the title of an article will open an notes text area where comments for the article will be displayed.</p>
+
 
     <div id="notes"></div>
 

@@ -25,15 +25,15 @@
 const express    = require("express");
 const bodyParser = require("body-parser");
 const mongoose   = require("mongoose");
-const routes     = require('./routes/apiRoutes'); // Pull in our router file
-const exphbs     = require('express-handlebars'); // Use handlebars 
+const routes     = require("./routes/apiRoutes"); // Pull in our router file
+const exphbs     = require("express-handlebars"); // Use handlebars 
 
 // The scraping tools from activity 20
-const axios   = require("axios");
-const cheerio = require("cheerio");
+const axiosNu   = require("axios");
+const cheerioNu = require("cheerio");
 
 // Require all models
-const db = require("./models");
+const dbNu = require("./models");
 
 // I like port 17001
 const PORT = process.env.PORT || 17001;
@@ -49,15 +49,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //Tell the express app to use the routes in ./routes/apiRoutes
-app.use('/', routes);
+app.use("/", routes);
 
 // Set up Handlebars as our view engine
-app.engine('handlebars', exphbs(
-	{ 
-		defaultLayout: 'main',
-		partialsPath: "./views/partials"
-	}));
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs(
+    { 
+        defaultLayout: "main",
+        partialsPath: "./views/partials"
+    }));
+app.set("view engine", "handlebars");
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
@@ -70,8 +70,8 @@ mongoose.connect(MONGODB_URI, {});
 
 
 // Tell the express object where front end files are
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + "/public"));
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });
+});

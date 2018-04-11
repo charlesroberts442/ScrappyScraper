@@ -3,3 +3,5 @@ node_modules/
 iNeed2_Resources/
 
 /iNeed2.html
+/.eslintrc.json
+
